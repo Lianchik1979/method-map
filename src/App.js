@@ -1,24 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ListItem from './ListItem';
 
 function App() {
+const list = [
+  {make: 'Toyota', model: 'Camry', price: 20000},
+  {make: 'BMW', model: '7', price: 58000},
+  {make: 'VAZ', model: '4', price: 15000}];
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {list.map(el => <ListItem el={el}/>)}
     </div>
   );
 }
